@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel</title>
+  <link rel="stylesheet" href="css\admin.css">
+</head>
+<body>
+  <div class="admin-container">
+    <aside class="sidebar">
+      <h2>Панель управления</h2>
+      <nav>
+        <ul>
+          <li><a href="#" data-section="products">Товары</a></li>
+          <li><a href="#" data-section="categories">Категории</a></li>
+          <li><a href="#" data-section="users">Пользователи</a></li>
+          <li><a href="#" data-section="orders">Заказы</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <main class="content">
+      <div id="products-section">
+        <h2>Управление товарами</h2>
+        <button id="add-product">Добавить товар</button>
+        <div id="products-list"></div>
+      </div>
+    </main>
+  </div>
+  <script src="js\admin.js"></script>
+</body>
+</html>

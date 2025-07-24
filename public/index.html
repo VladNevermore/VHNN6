@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutterra - Магазин орехов и сухофруктов</title>
+    <link rel="stylesheet" href="css\style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon"></div>
+                    <div class="logo-text">Nut<span>terra</span></div>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#">Главная</a></li>
+                        <li><a href="#">Орехи</a></li>
+                        <li><a href="#">Сухофрукты</a></li>
+                        <li><a href="#">Сладости</a></li>
+                        <li><a href="#">О нас</a></li>
+                        <li><a href="#">Контакты</a></li>
+                    </ul>
+                </nav>
+                <div class="user-actions">
+                    <button class="auth-btn" id="auth-btn">Войти</button>
+                    <button class="cart-btn" id="cart-btn">🛒 <span class="cart-count">0</span></button>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <h1>Nutterra - мир полезных вкусов</h1>
+            <p>Натуральные орехи и сухофрукты высшего качества с доставкой по всей России</p>
+            <div class="search-bar">
+                <input type="text" placeholder="Найти орехи, сухофрукты..." id="search-input">
+                <button id="search-btn">Поиск</button>
+            </div>
+        </div>
+    </section>
+    
+    <section class="categories">
+        <div class="container">
+            <h2 class="section-title">Категории</h2>
+            <div class="category-grid" id="category-grid"></div>
+        </div>
+    </section>
+    
+    <section class="products">
+        <div class="container">
+            <h2 class="section-title">Популярные товары</h2>
+            <div class="product-grid" id="product-grid"></div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Магазин</h3>
+                    <ul>
+                        <li><a href="#">Орехи</a></li>
+                        <li><a href="#">Сухофрукты</a></li>
+                        <li><a href="#">Сладости</a></li>
+                        <li><a href="#">Новинки</a></li>
+                        <li><a href="#">Акции</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Информация</h3>
+                    <ul>
+                        <li><a href="#">О компании</a></li>
+                        <li><a href="#">Доставка и оплата</a></li>
+                        <li><a href="#">Контакты</a></li>
+                        <li><a href="#">Политика конфиденциальности</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Контакты</h3>
+                    <ul>
+                        <li>Телефон: +7 (123) 456-78-90</li>
+                        <li>Email: info@nutterra.ru</li>
+                        <li>Адрес: г. Москва, ул. Ореховая, 15</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Мы в соцсетях</h3>
+                    <ul>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">VK</a></li>
+                        <li><a href="#">Telegram</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 Nutterra. Все права защищены.
+            </div>
+        </div>
+    </footer>
+    
+    <div class="modal" id="auth-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="auth-form" id="login-form">
+                <h2>Вход</h2>
+                <input type="tel" placeholder="Номер телефона" id="login-phone">
+                <button id="login-btn">Получить код</button>
+                <div class="auth-switch">
+                    Нет аккаунта? <a id="switch-to-register">Зарегистрироваться</a>
+                </div>
+            </div>
+            <div class="auth-form" id="register-form" style="display: none;">
+                <h2>Регистрация</h2>
+                <input type="text" placeholder="Имя" id="register-name">
+                <input type="tel" placeholder="Номер телефона" id="register-phone">
+                <button id="register-btn">Зарегистрироваться</button>
+                <div class="auth-switch">
+                    Уже есть аккаунт? <a id="switch-to-login">Войти</a>
+                </div>
+            </div>
+            <div class="auth-form" id="verify-form" style="display: none;">
+                <h2>Подтверждение</h2>
+                <p>Мы отправили код подтверждения на номер <span id="verify-phone"></span></p>
+                <input type="text" placeholder="Код из SMS" id="verify-code">
+                <button id="verify-btn">Подтвердить</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="modal" id="cart-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Корзина</h2>
+            <div class="cart-items" id="cart-items">
+                <p>Корзина пуста</p>
+            </div>
+            <div class="cart-total" id="cart-total" style="display: none;">
+                Итого: <span id="total-sum">0</span> ₽
+            </div>
+            <button class="checkout-btn" id="checkout-btn" style="display: none;">Оформить заказ</button>
+        </div>
+    </div>
+    
+    <script src="js\app.js"></script>
+</body>
+</html>
