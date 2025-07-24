@@ -11,7 +11,14 @@ const app = express();
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/nutterra', {
+const fs = require('fs');
+const path = require('path');
+
+console.log("DB Connection String:", process.env.MONGODB_URI);
+console.log('Current directory files:', fs.readdirSync(__dirname));
+console.log('Models directory files:', fs.readdirSync(path.join(__dirname, 'models')));
+
+mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://VladNevermore:Yjdsqgfhjkm1@cluster0.2k2w9ao.mongodb.net/nutterra?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
