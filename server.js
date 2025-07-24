@@ -1,8 +1,13 @@
+console.log('Starting server...');
+console.log('Node.js version:', process.version);
+console.log('Current directory:', __dirname);
+console.log('Files in project:', require('fs').readdirSync(__dirname));
+console.log('Files in models dir:', require('fs').readdirSync(path.join(__dirname, 'models')));
 require('dotenv').config();
+const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const path = require('path');
 const crypto = require('crypto');
 const jwt = require('jsonwebtoken');
 
@@ -12,7 +17,6 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
 const fs = require('fs');
-const path = require('path');
 
 console.log("DB Connection String:", process.env.MONGODB_URI);
 console.log('Current directory files:', fs.readdirSync(__dirname));
